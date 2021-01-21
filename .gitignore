@@ -52,4 +52,5 @@ Mkfile.old
 dkms.conf
 
 nrf5_sdk/sdk
+external/nrf_sdk/
 build/

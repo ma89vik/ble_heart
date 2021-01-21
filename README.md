@@ -1,4 +1,4 @@
-[![Build Actions Status](https://github.com/ma89vik/rc_car_control_board/workflows/Build/badge.svg)](https://github.com/ma89vik/rc_car_control_board/actions)
+[![Build Actions Status](https://github.com/ma89vik/ble_heart/workflows/Build/badge.svg)](https://github.com/ma89vik/ble_heart/actions)
 # ble_heart
 
 # Pre-Requirements
@@ -9,9 +9,3 @@
  * Set NRF_SDK_PATH to the path to your nrf52 SDK
  * Install python requirements from requirements.txt
 
-# Features
- * Bootloader with ECDSA signature verification
-
-# TODO
- * SHA hardware acceleration
- * Define and implement control board <-> nav board protocol (protobuf)
