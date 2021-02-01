@@ -130,7 +130,8 @@ list(APPEND INC_FOLDERS
 
 add_library(bootloader_sdk STATIC ${SRC_FILES})
 
-target_compile_definitions(bootloader_sdk PUBLIC BOARD_PCA10040
+target_compile_definitions(bootloader_sdk PUBLIC BLE_STACK_SUPPORT_REQD
+                                                BOARD_PCA10040
                                                 CONFIG_GPIO_AS_PINRESET
                                                 FLOAT_ABI_HARD
                                                 NRF52
@@ -143,6 +144,8 @@ target_compile_definitions(bootloader_sdk PUBLIC BOARD_PCA10040
                                                 SOFTDEVICE_PRESENT
                                                 SVC_INTERFACE_CALL_AS_NORMAL_FUNCTION
                                                 __HEAP_SIZE=0)
+                                                
+target_compile_options(bootloader_sdk PRIVATE -Os -g3)
 
 target_include_directories(bootloader_sdk PUBLIC ${INC_FOLDERS})
 target_link_libraries(bootloader_sdk PRIVATE micro_ecc)

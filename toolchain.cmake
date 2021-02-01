@@ -13,7 +13,7 @@ endif()
 
 set(CPU_FLAGS "-mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -mthumb -mabi=aapcs")
 #-Map=output.map
-set(COMMON_FLAGS "-ffunction-sections -fdata-sections -fno-strict-aliasing -Wall -Werror -specs=nosys.specs ${CPU_FLAGS}" )
+set(COMMON_FLAGS "-ffunction-sections -fdata-sections -fno-strict-aliasing -Wall -Werror -specs=nosys.specs -Wl,-Map=output.map ${CPU_FLAGS}" )
 
 set(CMAKE_ASM_FLAGS ${COMMON_FLAGS})
 set(CMAKE_C_FLAGS_INIT ${COMMON_FLAGS})

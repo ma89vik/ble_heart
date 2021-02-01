@@ -23,21 +23,29 @@ set(SOFTDEVICE_PATH "${SDK_ROOT}/components/softdevice/s132/hex/s132_nrf52_7.2.0
 
 # adds target for erasing and  the board with a softdevice
 add_custom_target(softdevice_flash 
-        COMMAND ${NRFJPROG} --program ${SOFTDEVICE_PATH} -f nrf52 --sectorerase
-        COMMAND sleep 0.5s
-        COMMAND ${NRFJPROG} --reset -f nrf52
-        COMMENT "flashing SoftDevice"
-        )
+                    COMMAND ${NRFJPROG} --program ${SOFTDEVICE_PATH} -f nrf52 --sectorerase
+                    COMMAND sleep 0.5s
+                    COMMAND ${NRFJPROG} --reset -f nrf52
+                    COMMENT "flashing SoftDevice"
+                    )
 
 add_custom_target(erase_flash 
-        COMMAND ${NRFJPROG} --eraseall -f nrf52
-        COMMENT "erasing flashing"
-        )
+                    COMMAND ${NRFJPROG} --eraseall -f nrf52
+                    COMMENT "erasing flashing"
+                    )
 
 add_custom_target("app_flash" 
-        COMMAND ${NRFJPROG} --program "ble_heart.hex" -f nrf52 --sectorerase
-        COMMAND sleep 0.5s
-        COMMAND ${NRFJPROG} --reset -f nrf52
-        DEPENDS "ble_heart.hex"
-        COMMENT "flashing ble_heart.hex"
-        )
+                    COMMAND ${NRFJPROG} --program "ble_heart.hex" -f nrf52 --sectorerase
+                    COMMAND sleep 0.5s
+                    COMMAND ${NRFJPROG} --reset -f nrf52
+                    DEPENDS "ble_heart.hex"
+                    COMMENT "flashing ble_heart.hex"
+                    )
+
+add_custom_target("bootloader_flash" 
+                    COMMAND ${NRFJPROG} --program "bootloader.hex" -f nrf52 --sectorerase
+                    COMMAND sleep 0.5s
+                    COMMAND ${NRFJPROG} --reset -f nrf52
+                    DEPENDS "bootloader.hex"
+                    COMMENT "flashing bootloader.hex"
+                    )

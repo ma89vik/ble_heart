@@ -1714,6 +1714,7 @@
 #ifndef NRF_LOG_ENABLED
 #define NRF_LOG_ENABLED 0
 #endif
+
 // <h> Log message pool - Configuration of log message pool
 
 //==========================================================
