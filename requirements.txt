@@ -1,1 +1,2 @@
 nrfutil==6.1.0
+meson

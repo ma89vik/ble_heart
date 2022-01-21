@@ -1,0 +1,44 @@
+[constants]
+arch = 'arm-none-eabi'
+
+[binaries]
+c       = arch + '-gcc'
+cpp     = arch + '-g++'
+ld      = arch + '-ld'
+ar      = arch + '-ar'
+as      = arch + '-as'
+size    = arch + '-size'
+objdump = arch + '-objdump'
+objcopy = arch + '-objcopy'
+strip   = arch + '-strip'
+gdb     = arch + '-gdb'
+
+[properties]
+c_args      = [
+               '-mcpu=cortex-m4',
+               '-mthumb',
+               '-mfloat-abi=hard',
+               '-mfpu=fpv4-sp-d16',
+               '-mabi=aapcs',
+               '-ffunction-sections',
+               '-fdata-sections',
+               '-fno-strict-aliasing',
+
+              '-Wall',
+              '-Werror',
+              '--specs=nosys.specs',
+               ]
+
+c_link_args = [
+                '-lc',
+                '-lm',
+                '-lnosys',
+                '-Wl',
+                '--gc-section',
+              ]
+
+[host_machine]
+system     = 'none'
+cpu_family = 'arm'
+cpu        = 'cortex-m4'
+endian     = 'little'
