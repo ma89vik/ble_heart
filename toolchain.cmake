@@ -1,9 +1,9 @@
 set(CMAKE_SYSTEM_NAME Generic)
 
 if(DEFINED ENV{TOOLCHAIN_PATH})
-  set(CMAKE_C_COMPILER $ENV{TOOLCHAIN_PATH}/bin/arm-none-eabi-gcc.exe)
-  set(CMAKE_CXX_COMPILER $ENV{TOOLCHAIN_PATH}/bin/arm-none-eabi-g++.exe)
-  set(CMAKE_ASM_COMPILER $ENV{TOOLCHAIN_PATH}/bin/arm-none-eabi-gcc.exe)
+  set(CMAKE_C_COMPILER $ENV{TOOLCHAIN_PATH}/bin/arm-none-eabi-gcc)
+  set(CMAKE_CXX_COMPILER $ENV{TOOLCHAIN_PATH}/bin/arm-none-eabi-g++)
+  set(CMAKE_ASM_COMPILER $ENV{TOOLCHAIN_PATH}/bin/arm-none-eabi-gcc)
 else()
   set(CMAKE_C_COMPILER arm-none-eabi-gcc)
   set(CMAKE_CXX_COMPILER arm-none-eabi-g++)

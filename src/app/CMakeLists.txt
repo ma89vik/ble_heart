@@ -187,11 +187,12 @@ list(APPEND SDK_INC_FOLDERS
     )
 
 list(APPEND APP_SRCS
-        ${CMAKE_CURRENT_LIST_DIR}/app_main.c)
+        ${CMAKE_CURRENT_LIST_DIR}/app_main.c
+        ${CMAKE_CURRENT_LIST_DIR}/advertiser.c)
 
 add_executable(${BLE_HEART_ELF} ${APP_SRCS} ${SDK_SRC_FILES})
 
-target_compile_definitions(${BLE_HEART_ELF} PUBLIC  
+target_compile_definitions(${BLE_HEART_ELF} PUBLIC
                                                 APP_TIMER_V2
                                                 APP_TIMER_V2_RTC1_ENABLED
                                                 BOARD_PCA10040
@@ -220,4 +221,3 @@ add_custom_command(TARGET ${BLE_HEART_ELF}
                    COMMENT "Generating hex from ${BLE_HEART_ELF}"
                    )
 
-            

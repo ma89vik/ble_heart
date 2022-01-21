@@ -1,3 +1,8 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "files.associations": {
+        "nrf_ble_gatt.h": "c",
+        "nrf_pwr_mgmt.h": "c",
+        "nrf_ble_qwr.h": "c"
+    }
 }
