@@ -6,9 +6,9 @@ export NRFJPROG_PATH="nrfjprog"
 
 
 # Python setup (in a virtual env)
-python3 -m venv .ble_heart_venv
+python -m venv .ble_heart_venv
 source .ble_heart_venv/bin/activate
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 
 # add tools to path
 export PATH="$PATH:$TOOLCHAIN_PATH/bin"
