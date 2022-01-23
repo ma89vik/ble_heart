@@ -5,4 +5,4 @@
 
 #!/bin/bash
 
-meson setup
+meson setup --cross-file meson.cross_arm_eabi build

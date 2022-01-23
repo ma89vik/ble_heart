@@ -7,4 +7,6 @@ export NRFJPROG_PATH="/c/Program Files (x86)/Nordic Semiconductor/nrf-command-li
 # Python setup (in a virtual env)
 python -m venv .ble_heart_venv
 source .ble_heart_venv/Scripts/activate
+
+export PATH=$PATH:$TOOLCHAIN_PATH/bin
 pip install -r requirements.txt

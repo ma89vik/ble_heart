@@ -28,4 +28,17 @@ app_linker_args = [
     '-T'+ join_paths(meson.current_source_dir(), 'src/app/app.ld')
 ]
 
-executable('ble_heart_app', sdk_srcs + app_srcs, include_directories : [sdk_incs, app_incs], c_args : [app_c_args ], link_args: app_linker_args)
+app_name = 'ble_heart_app'
+
+app = executable(app_name, sdk_srcs + app_srcs,
+                 name_suffix         : 'elf',
+                 include_directories : [sdk_incs, app_incs], 
+                 c_args              : [app_c_args ], 
+                 link_args           : app_linker_args
+                )
+
+app_bin = custom_target('app_elf_to_bin',
+                        output           : app_name + '.bin',
+                        build_by_default : true,
+                        command          : ['objcopy', '-O', 'binary', app_name + '.elf', app_name + '.bin'],
+                        depends          : [app])
